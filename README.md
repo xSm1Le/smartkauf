@@ -10,4 +10,3 @@ und diese direkt auf die Einkaufsliste zu setzen.
 
 Nachdem das erste Gericht auf der einkaufsliste steht, wird direkt gefragt ob man für die nächsten 3 tage auch weiter planen möchte.
 Es sollte eine auswahl möglich sein wo man zwischen 3, 5 und 7 Tagen Planung variieren kann.
-
