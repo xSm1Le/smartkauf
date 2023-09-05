@@ -96,4 +96,27 @@ const brokkoliKartoffelGratin = {
     schmand: '1 EL'
   };
 
-  
+  function getInput(promt) {
+    return readline.question(promt);
+  }
+
+  function createUser() {
+    const userName = getInput('Schoen das du dich fuer Smartkauf entschieden hast. Lass uns direkt anfangen! Damit ich mich vernuenftig auf dich einstellen kann, verrate mir doch bitte, wie darf ich sie nennen?');
+    const user = {
+        userName: userName,
+      }
+      return user;
+  }
+
+  let userArray = [""];
+
+  const user = createUser();
+  user.push(userArray);
+  console.log("prüfung", user);
+
+  const welcome = readline.question(`Okay ${user} Willst du dich auf die woche vorbereiten?`);
+
+
+
+
+ 
