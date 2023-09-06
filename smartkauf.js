@@ -6,23 +6,23 @@ const broKarGra = { // brokkoliKartoffelGratin
     title: "Brokkoli Kartoffel Gratin",
     serves: 2,
     zutaten: [
-      {zutat:"Kartoffeln" maenge:800},
-      {zutat:"Brokkoli" maenge:400},
-      {zutat:"Kochschinken" maenge:100},
-      {zutat:"Sahne" maenge:200},
-      {zutat:"Milch" maenge:200},
-      {zutat:"Mehl" maenge:1},
-      {zutat:"Salz" maenge:"nach Geschmack"},
-      {zutat:"Pfeffer" maenge:"nach Geschmack"},
-      {zutat:"Muskat" maenge:"nach Geschmack"},
-      {zutat:"Zwiebel" maenge:1},
-      {zutat:"Kaese" maenge:100},
-      {zutat:"Oel" maenge:"für die Form"},
+      {zutat:"Kartoffeln", maenge:800},
+      {zutat:"Brokkoli", maenge:400},
+      {zutat:"Kochschinken", maenge:100},
+      {zutat:"Sahne", maenge:200},
+      {zutat:"Milch", maenge:200},
+      {zutat:"Mehl", maenge:1},
+      {zutat:"Salz", maenge:"nach Geschmack"},
+      {zutat:"Pfeffer", maenge:"nach Geschmack"},
+      {zutat:"Muskat", maenge:"nach Geschmack"},
+      {zutat:"Zwiebel", maenge:1},
+      {zutat:"Kaese", maenge:100},
+      {zutat:"Oel", maenge:"für die Form"},
     ]
   };
 
   const itakartsal = { // italienischerKartoffelsalat
-    
+
     kartoffeln: 400,
     tomaten: 200,
     lauchzwiebeln: 100,
