@@ -133,6 +133,7 @@ const spaMiCha = {
 
   console.log('Smartkauf - Alles was du im Alltag brauchst!');
 
+      
   function checkUser() {
     const name = readlineSync.question('Mit wem hab ich das vergnuegen? verrate mir bitte deinen Namen! ');
 
@@ -141,16 +142,23 @@ const spaMiCha = {
     if (user) {
       console.log(`Willkommen zurueck ${user.name}!` );
     } else {
-      users.push({name});
-      console.log(`Ein neuer User! Herzlich Willkommen, ${name}!`);
-    }
+      console.log(`Ein neuer User! Herzlich Willkommen, ${name}! Registriere dich bitte auf unserer Homepage! Vorab kannst du das Programm aber als Gast nutzen! Kurze Info: Als Gast kannst du leider nicht alle Features nutzen!`);
 
-    const firstStep = readlineSync.question(`Also ${name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Y/N:`);
+      const firstStep = readlineSync.question(`Also ${name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Antwortmoeglichkeiten: Y/N: `);
+      if (firstStep !== "") {
+        const tageDieWoche = readlineSync.question(`An wie vielen Tagen soll dein Leben mal rund laufen? Kurze Info: Als Gast kannst du nur 1 - 3 Tage vorplanen! Moechtest du 1, 2 oder 3 Tage planen? Antwortmoeglichkeiten: 1/2/3 /A fuer Abbrechen: `);
+        if (tageDieWoche === "A") {
+          console.log("Schade! Dann noch einen schoenen Tag und spiel bitte mit den Autos auf der Autobahn, Gruesse!");
+        }
+      } else {
+        console.log("Schade, dann kann ich dir leider nicht weiter helfen!");
+      }
+
+    }
 
      return user
-    
     }
 
-  const user = checkUser();
+    const user = checkUser();
 
  
