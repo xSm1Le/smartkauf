@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import { users } from './users.js';
 
-
+let rezeptArray = [];
 // Objecte der Rezepte
 
 const broKarGra = { // brokkoliKartoffelGratin
@@ -22,6 +22,7 @@ const broKarGra = { // brokkoliKartoffelGratin
       {zutat:"Oel", maenge:"für die Form"},
     ]
   };
+  rezeptArray.push(broKarGra);
 
   const itakartsal = { // Italienischer Kartoffelsalat
     title: "Italienischer Kartoffelsalat",
@@ -41,6 +42,7 @@ const broKarGra = { // brokkoliKartoffelGratin
       { zutat: "Kapern", maenge: "nach Belieben" }
     ]
   };
+  rezeptArray.push(itakartsal);
 
 const spaMiKno = {
     title: "Spaghetti mit Knoblauch, Öl und Chili",
@@ -54,6 +56,7 @@ const spaMiKno = {
       { zutat: "Salz", maenge: "nach Geschmack" }
     ]
 };
+rezeptArray.push(itakartsal);
 
 const paMiPeUnWal = {
     title: "Pasta mit Pesto und Walnüssen",
@@ -70,6 +73,7 @@ const paMiPeUnWal = {
       { zutat: "NativesOlivenoelExtraDelicato", maenge: "nach Geschmack" }
     ]
 };
+rezeptArray.push(paMiPeUnWal);
 
 const hahnblasami = {
     title: "Hähnchenbrust in Balsamicosauce",
@@ -84,6 +88,7 @@ const hahnblasami = {
       { zutat: "OlivenoelTradizionale", maenge: "nach Bedarf" }
     ]
 };
+rezeptArray.push(hahnblasami);
 
 const pasmizucha = {
     title: "One-Pot-Pasta mit Zucchini und Champignons",
@@ -101,6 +106,7 @@ const pasmizucha = {
       { zutat: "Pfeffer", maenge: "nach Geschmack" }
     ]
 };
+rezeptArray.push(pasmizucha);
 
 const spaMiCha = {
     title: "One-Pot-Spaghetti mit Champignons",
@@ -124,16 +130,15 @@ const spaMiCha = {
       { zutat: "Schmand", maenge: "1 EL" }
     ]
 };
+rezeptArray.push(spaMiCha);
 
   function getInput(promt) {
     return readline.question(promt);
   }
-
   users
 
   console.log('Smartkauf - Alles was du im Alltag brauchst!');
 
-      
   function checkUser() {
     const name = readlineSync.question('Mit wem hab ich das vergnuegen? verrate mir bitte deinen Namen! ');
 
@@ -142,23 +147,28 @@ const spaMiCha = {
     if (user) {
       console.log(`Willkommen zurueck ${user.name}!` );
     } else {
-      console.log(`Ein neuer User! Herzlich Willkommen, ${name}! Registriere dich bitte auf unserer Homepage! Vorab kannst du das Programm aber als Gast nutzen! Kurze Info: Als Gast kannst du leider nicht alle Features nutzen!`);
+      console.log(`Ein neuer User! Herzlich Willkommen, ${name}! Registriere dich bitte auf unserer Homepage! Vorab kannst du das Programm aber als Gast nutzen! Kurze Info: Als Gast kannst du leider nur eingeschraenkte Features nutzen!`);
 
       const firstStep = readlineSync.question(`Also ${name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Antwortmoeglichkeiten: Y/N: `);
       if (firstStep !== "") {
-        const tageDieWoche = readlineSync.question(`An wie vielen Tagen soll dein Leben mal rund laufen? Kurze Info: Als Gast kannst du nur 1 - 3 Tage vorplanen! Moechtest du 1, 2 oder 3 Tage planen? Antwortmoeglichkeiten: 1/2/3 /A fuer Abbrechen: `);
+        const tageDieWoche = readlineSync.question(`An wie vielen Tagen soll dein Leben mal so richtig rund laufen? Kurze Info: Als Gast kannst du nur 1 - 3 Tage vorplanen! Moechtest du 1, 2 oder 3 Tage planen? Antwortmoeglichkeiten: 1/2/3 /A fuer Abbrechen: `);
         if (tageDieWoche === "A") {
-          console.log("Schade! Dann noch einen schoenen Tag und spiel bitte mit den Autos auf der Autobahn, Gruesse!");
+          console.log("Schade! Du scheinst doch nicht so smart zu sein!");
+        } else if (tageDieWoche === "1") {
+          console.log("Wundervoll! Dann lass dich gern Inspirieren. worauf hättest du lust?");
+          const einTagFrage = readlineSync.question("Worauf hast du lust?");
+          console.log(rezeptArray[0].title);
+        } else if (tageDieWoche === "2") {
+          console.log("Super! Was schmeckt dir am besten?");
+        } else if (tageDieWoche === "3") {
+          console.log("Ein Feinschmecker! Was könnte dir schmecken?");
         }
       } else {
         console.log("Schade, dann kann ich dir leider nicht weiter helfen!");
       }
-
     }
-
      return user
     }
-
     const user = checkUser();
 
  
