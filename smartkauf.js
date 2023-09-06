@@ -136,17 +136,21 @@ const spaMiCha = {
   function checkUser() {
     const name = readlineSync.question('Mit wem hab ich das vergnuegen? verrate mir bitte deinen Namen! ');
 
-     return users.find(user => user.name === name);
-  }
+    const user = users.find(user => user.name === name);
+
+    if (user) {
+      console.log(`Willkommen zurueck ${user.name}!` );
+    } else {
+      users.push({name});
+      console.log(`Ein neuer User! Herzlich Willkommen, ${name}!`);
+    }
+
+    const firstStep = readlineSync.question(`Also ${name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Y/N:`);
+
+     return user
+    
+    }
 
   const user = checkUser();
-  
-  if (user === user.name) {
-    console.log(`Willkommen zurueck ${user.name}!` );
-  } else {
-    console.log(`Ein neuer User! Herzlich Willkommen ${user.name}!`);
-  }
 
-
-  // console.log("prüfung", user);
-  const welcome = readlineSync.question(`Also ${user.name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Y/N`);
+ 
