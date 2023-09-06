@@ -2,22 +2,27 @@ const readline = require("readline-sync")
 
 // Objecte der Rezepte
 
-const brokkoliKartoffelGratin = {
-    kartoffeln: 800,
-    brokkoli: 400,
-    kochschinken: 100,
-    sahne: 200,
-    milch: 200,
-    mehl: 1,
-    salz: 'nach Geschmack',
-    pfeffer: 'nach Geschmack',
-    muskat: 'nach Geschmack',
-    zwiebel: 1,
-    kaese: 100,
-    oel: 'für die Form'
+const broKarGra = { // brokkoliKartoffelGratin
+    title: "Brokkoli Kartoffel Gratin",
+    serves: 2,
+    zutaten: [
+      {zutat:"Kartoffeln" maenge:800},
+      {zutat:"Brokkoli" maenge:400},
+      {zutat:"Kochschinken" maenge:100},
+      {zutat:"Sahne" maenge:200},
+      {zutat:"Milch" maenge:200},
+      {zutat:"Mehl" maenge:1},
+      {zutat:"Salz" maenge:"nach Geschmack"},
+      {zutat:"Pfeffer" maenge:"nach Geschmack"},
+      {zutat:"Muskat" maenge:"nach Geschmack"},
+      {zutat:"Zwiebel" maenge:1},
+      {zutat:"Kaese" maenge:100},
+      {zutat:"Oel" maenge:"für die Form"},
+    ]
   };
 
-  const italienischerKartoffelsalat = {
+  const itakartsal = { // italienischerKartoffelsalat
+    
     kartoffeln: 400,
     tomaten: 200,
     lauchzwiebeln: 100,
@@ -113,6 +118,6 @@ const brokkoliKartoffelGratin = {
 
   const user = createUser();
   
-  console.log("prüfung", user);
+  // console.log("prüfung", user);
 
   const welcome = readline.question(`Okay ${user} Willst du dich auf die woche vorbereiten? Y / N `);
