@@ -131,15 +131,22 @@ const spaMiCha = {
 
   users
 
-  function createUser() {
-    console.log('Schoen das du dich fuer Smartkauf entschieden hast. Lass uns direkt anfangen!');
-    const name = readlineSync.question('Damit ich mich vernuenftig auf dich einstellen kann, verrate mir doch bitte, wie darf ich sie nennen?');
+  console.log('Smartkauf - Alles was du im Alltag brauchst!');
+
+  function checkUser() {
+    const name = readlineSync.question('Mit wem hab ich das vergnuegen? verrate mir bitte deinen Namen! ');
 
      return users.find(user => user.name === name);
   }
 
-  const user = createUser();
+  const user = checkUser();
   
-  // console.log("prüfung", user);
-  const welcome = readlineSync.question(`Okay ${user.name} Willst du dich auf die woche vorbereiten? Y / N `);
+  if (user === user.name) {
+    console.log(`Willkommen zurueck ${user.name}!` );
+  } else {
+    console.log(`Ein neuer User! Herzlich Willkommen ${user.name}!`);
+  }
 
+
+  // console.log("prüfung", user);
+  const welcome = readlineSync.question(`Also ${user.name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Y/N`);
