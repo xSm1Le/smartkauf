@@ -1,4 +1,5 @@
-const readline = require("readline-sync")
+import readlineSync from 'readline-sync';
+
 
 // Objecte der Rezepte
 
@@ -129,17 +130,14 @@ const spaMiCha = {
 
   function createUser() {
     console.log('Schoen das du dich fuer Smartkauf entschieden hast. Lass uns direkt anfangen!');
-    const userName = getInput('Damit ich mich vernuenftig auf dich einstellen kann, verrate mir doch bitte, wie darf ich sie nennen?');
-    const user = {
-        userName: userName,
+    const name = readlineSync.question('Damit ich mich vernuenftig auf dich einstellen kann, verrate mir doch bitte, wie darf ich sie nennen?');
+    const userData = {
+        userName: name,
       }
-      return user;
+      return userData;
   }
-
-  let userArray = [""];
-
+  
   const user = createUser();
   
   // console.log("prüfung", user);
-
-  const welcome = readline.question(`Okay ${user} Willst du dich auf die woche vorbereiten? Y / N `);
+  const welcome = readlineSync.question(`Okay ${user.userName} Willst du dich auf die woche vorbereiten? Y / N `);
