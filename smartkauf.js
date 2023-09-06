@@ -1,4 +1,5 @@
 import readlineSync from 'readline-sync';
+import { users } from './users.js';
 
 
 // Objecte der Rezepte
@@ -128,16 +129,17 @@ const spaMiCha = {
     return readline.question(promt);
   }
 
+  users
+
   function createUser() {
     console.log('Schoen das du dich fuer Smartkauf entschieden hast. Lass uns direkt anfangen!');
     const name = readlineSync.question('Damit ich mich vernuenftig auf dich einstellen kann, verrate mir doch bitte, wie darf ich sie nennen?');
-    const userData = {
-        userName: name,
-      }
-      return userData;
+
+     return users.find(user => user.name === name);
   }
-  
+
   const user = createUser();
   
   // console.log("prüfung", user);
-  const welcome = readlineSync.question(`Okay ${user.userName} Willst du dich auf die woche vorbereiten? Y / N `);
+  const welcome = readlineSync.question(`Okay ${user.name} Willst du dich auf die woche vorbereiten? Y / N `);
+
