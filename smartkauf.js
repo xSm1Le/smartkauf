@@ -139,10 +139,17 @@ rezeptArray.push(spaMiCha);
     titles.push(title);
   }
 
+  let zutaten = [];
+  for (let i = 0; i < rezeptArray.length; i++) {
+    let object = rezeptArray[i];
+    let zutat = object.zutaten;
+    zutaten.push(zutat);
+  }
 
   function getInput(promt) {
     return readline.question(promt);
   }
+
   users
 
   console.log('Smartkauf - Alles was du im Alltag brauchst!');
@@ -163,8 +170,12 @@ rezeptArray.push(spaMiCha);
         if (tageDieWoche === "A") {
           console.log("Schade! Du scheinst doch nicht so smart zu sein!");
         } else if (tageDieWoche === "1") {
-          console.log("Wundervoll! Dann lass dich gern Inspirieren. worauf hättest du lust?");
-          const einTagFrage = readlineSync.question(titles);
+          console.log("Wundervoll! Dann lass dich gern Inspirieren.Jedes Gericht ist fuer 2 Personen ausgelegt! Worauf hättest du lust?");
+          console.table(titles);
+          const einTagFrage = readlineSync.question("Die Auswahl ist gross, verrate mir die Nummer deines Wunschgerichtes fuer Heute: ");
+          console.log(`Du benötigst dafür folgende Zutaten:`);
+          console.table(zutaten);
+          
         } else if (tageDieWoche === "2") {
           console.log("Super! Was schmeckt dir am besten?");
         } else if (tageDieWoche === "3") {
