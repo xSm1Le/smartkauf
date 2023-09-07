@@ -45,7 +45,7 @@ const broKarGra = { // brokkoliKartoffelGratin
   rezeptArray.push(itakartsal);
 
 const spaMiKno = {
-    title: "Spaghetti mit Knoblauch, Öl und Chili",
+    title: "Spaghetti mit Knoblauch, Oel und Chili",
     serves: 2,
     zutaten: [
       { zutat: "Pasta", maenge: 320 },
@@ -59,7 +59,7 @@ const spaMiKno = {
 rezeptArray.push(itakartsal);
 
 const paMiPeUnWal = {
-    title: "Pasta mit Pesto und Walnüssen",
+    title: "Pasta mit Pesto und Walnuessen",
     serves: 2,
     zutaten: [
       { zutat: "Pasta", maenge: 300 },
@@ -76,7 +76,7 @@ const paMiPeUnWal = {
 rezeptArray.push(paMiPeUnWal);
 
 const hahnblasami = {
-    title: "Hähnchenbrust in Balsamicosauce",
+    title: "Haehnchenbrust in Balsamicosauce",
     serves: 2,
     zutaten: [
       { zutat: "Hähnchenbrust", maenge: 1 },
@@ -132,6 +132,14 @@ const spaMiCha = {
 };
 rezeptArray.push(spaMiCha);
 
+  let titles = [];
+  for (let i = 0; i < rezeptArray.length; i++){
+    let object = rezeptArray[i];
+    let title = object.title;
+    titles.push(title);
+  }
+
+
   function getInput(promt) {
     return readline.question(promt);
   }
@@ -156,8 +164,7 @@ rezeptArray.push(spaMiCha);
           console.log("Schade! Du scheinst doch nicht so smart zu sein!");
         } else if (tageDieWoche === "1") {
           console.log("Wundervoll! Dann lass dich gern Inspirieren. worauf hättest du lust?");
-          const einTagFrage = readlineSync.question("Worauf hast du lust?");
-          console.log(rezeptArray[0].title);
+          const einTagFrage = readlineSync.question(titles);
         } else if (tageDieWoche === "2") {
           console.log("Super! Was schmeckt dir am besten?");
         } else if (tageDieWoche === "3") {
