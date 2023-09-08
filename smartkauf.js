@@ -1,51 +1,46 @@
 import readlineSync from 'readline-sync';
 import { users } from './users.js';
-
-let rezeptArray = [];
 // Objecte der Rezepte
 
-const broKarGra = { // brokkoliKartoffelGratin
-    title: "Brokkoli Kartoffel Gratin",
-    serves: 2,
-    zutaten: [
-      {zutat:"Kartoffeln", maenge:800},
-      {zutat:"Brokkoli", maenge:400},
-      {zutat:"Kochschinken", maenge:100},
-      {zutat:"Sahne", maenge:200},
-      {zutat:"Milch", maenge:200},
-      {zutat:"Mehl", maenge:1},
-      {zutat:"Salz", maenge:"nach Geschmack"},
-      {zutat:"Pfeffer", maenge:"nach Geschmack"},
-      {zutat:"Muskat", maenge:"nach Geschmack"},
-      {zutat:"Zwiebel", maenge:1},
-      {zutat:"Kaese", maenge:100},
-      {zutat:"Oel", maenge:"für die Form"},
-    ]
-  };
-  rezeptArray.push(broKarGra);
+const meineRezepte = [
 
-  const itakartsal = { // Italienischer Kartoffelsalat
-    title: "Italienischer Kartoffelsalat",
-    serves: "2",
-    zutaten: [
-      { zutat: "Kartoffeln", maenge: 400 },
-      { zutat: "Tomaten", maenge: 200 },
-      { zutat: "Lauchzwiebeln", maenge: 100 },
-      { zutat: "Oliven", maenge: 10 },
-      { zutat: "Parmaschinken", maenge: 50 },
-      { zutat: "Knoblauch", maenge: 1 },
-      { zutat: "Kraeuter", maenge: "italienische" },
-      { zutat: "Olivenoel", maenge: "nach Geschmack" },
-      { zutat: "Essig", maenge: "Wein-" },
-      { zutat: "Salz", maenge: "nach Geschmack" },
-      { zutat: "Pfeffer", maenge: "nach Geschmack" },
-      { zutat: "Kapern", maenge: "nach Belieben" }
-    ]
-  };
-  rezeptArray.push(itakartsal);
-
-const spaMiKno = {
-    title: "Spaghetti mit Knoblauch, Oel und Chili",
+{title: "Brokkoli Kartoffel Gratin",
+serves: 2,
+zutaten: [
+  {zutat:"Kartoffeln", maenge:800},
+  {zutat:"Brokkoli", maenge:400},
+  {zutat:"Kochschinken", maenge:100},
+  {zutat:"Sahne", maenge:200},
+  {zutat:"Milch", maenge:200},
+  {zutat:"Mehl", maenge:1},
+  {zutat:"Salz", maenge:"nach Geschmack"},
+  {zutat:"Pfeffer", maenge:"nach Geschmack"},
+  {zutat:"Muskat", maenge:"nach Geschmack"},
+  {zutat:"Zwiebel", maenge:1},
+  {zutat:"Kaese", maenge:100},
+  {zutat:"Oel", maenge:"für die Form"},
+]
+},
+{
+  title: "Italienischer Kartoffelsalat",
+  serves: "2",
+  zutaten: [
+    { zutat: "Kartoffeln", maenge: 400 },
+    { zutat: "Tomaten", maenge: 200 },
+    { zutat: "Lauchzwiebeln", maenge: 100 },
+    { zutat: "Oliven", maenge: 10 },
+    { zutat: "Parmaschinken", maenge: 50 },
+    { zutat: "Knoblauch", maenge: 1 },
+    { zutat: "Kraeuter", maenge: "italienische" },
+    { zutat: "Olivenoel", maenge: "nach Geschmack" },
+    { zutat: "Essig", maenge: "Wein-" },
+    { zutat: "Salz", maenge: "nach Geschmack" },
+    { zutat: "Pfeffer", maenge: "nach Geschmack" },
+    { zutat: "Kapern", maenge: "nach Belieben" }
+  ]
+},
+{
+  title: "Spaghetti mit Knoblauch, Oel und Chili",
     serves: 2,
     zutaten: [
       { zutat: "Pasta", maenge: 320 },
@@ -55,28 +50,24 @@ const spaMiKno = {
       { zutat: "NativesOlivenoelExtraDelicato", maenge: "nach Geschmack" },
       { zutat: "Salz", maenge: "nach Geschmack" }
     ]
-};
-rezeptArray.push(itakartsal);
-
-const paMiPeUnWal = {
-    title: "Pasta mit Pesto und Walnuessen",
-    serves: 2,
-    zutaten: [
-      { zutat: "Pasta", maenge: 300 },
-      { zutat: "Kirschtomaten", maenge: 150 },
-      { zutat: "MiniMozzarella", maenge: 200 },
-      { zutat: "Pesto", maenge: 130 },
-      { zutat: "Walnuesse", maenge: 70 },
-      { zutat: "Rucola", maenge: 50 },
-      { zutat: "Salz", maenge: "nach Geschmack" },
-      { zutat: "Pfeffer", maenge: "nach Geschmack" },
-      { zutat: "NativesOlivenoelExtraDelicato", maenge: "nach Geschmack" }
-    ]
-};
-rezeptArray.push(paMiPeUnWal);
-
-const hahnblasami = {
-    title: "Haehnchenbrust in Balsamicosauce",
+},
+{
+  title: "Pasta mit Pesto und Walnuessen",
+  serves: 2,
+  zutaten: [
+    { zutat: "Pasta", maenge: 300 },
+    { zutat: "Kirschtomaten", maenge: 150 },
+    { zutat: "MiniMozzarella", maenge: 200 },
+    { zutat: "Pesto", maenge: 130 },
+    { zutat: "Walnuesse", maenge: 70 },
+    { zutat: "Rucola", maenge: 50 },
+    { zutat: "Salz", maenge: "nach Geschmack" },
+    { zutat: "Pfeffer", maenge: "nach Geschmack" },
+    { zutat: "NativesOlivenoelExtraDelicato", maenge: "nach Geschmack" }
+  ]
+},
+{
+  title: "Haehnchenbrust in Balsamicosauce",
     serves: 2,
     zutaten: [
       { zutat: "Hähnchenbrust", maenge: 1 },
@@ -87,10 +78,8 @@ const hahnblasami = {
       { zutat: "Pfeffer", maenge: "nach Geschmack" },
       { zutat: "OlivenoelTradizionale", maenge: "nach Bedarf" }
     ]
-};
-rezeptArray.push(hahnblasami);
-
-const pasmizucha = {
+},
+{
     title: "One-Pot-Pasta mit Zucchini und Champignons",
     serves: "2",
     zutaten: [
@@ -105,10 +94,8 @@ const pasmizucha = {
       { zutat: "Salz", maenge: "nach Geschmack" },
       { zutat: "Pfeffer", maenge: "nach Geschmack" }
     ]
-};
-rezeptArray.push(pasmizucha);
-
-const spaMiCha = {
+},
+{
     title: "One-Pot-Spaghetti mit Champignons",
     serves: 2,
     zutaten: [
@@ -129,29 +116,17 @@ const spaMiCha = {
       { zutat: "Thymian", maenge: "nach Geschmack" },
       { zutat: "Schmand", maenge: "1 EL" }
     ]
-};
-rezeptArray.push(spaMiCha);
-
-  let titles = [];
-  for (let i = 0; i < rezeptArray.length; i++){
-    let object = rezeptArray[i];
-    let title = object.title;
-    titles.push(title);
-  }
-
-  let zutaten = [];
-  for (let i = 0; i < rezeptArray.length; i++) {
-    let object = rezeptArray[i];
-    let zutat = object.zutaten;
-    zutaten.push(zutat);
-  }
-
+},
+// Weitere Rezepte hier einfügen bei bedarf (keine aufgabe für jetz!)
+];
+// ----------------------------------------------------------------
   function getInput(promt) {
     return readline.question(promt);
   }
 
   users
-
+// ----------------------------------------------------------------
+// ----------------------------------------------------------------
   console.log('Smartkauf - Alles was du im Alltag brauchst!');
 
   function checkUser() {
@@ -171,10 +146,32 @@ rezeptArray.push(spaMiCha);
           console.log("Schade! Du scheinst doch nicht so smart zu sein!");
         } else if (tageDieWoche === "1") {
           console.log("Wundervoll! Dann lass dich gern Inspirieren.Jedes Gericht ist fuer 2 Personen ausgelegt! Worauf hättest du lust?");
-          console.table(titles);
-          const einTagFrage = readlineSync.question("Die Auswahl ist gross, verrate mir die Nummer deines Wunschgerichtes fuer Heute: ");
+          for (const rezept of meineRezepte) {
+            console.table(rezept.title);
+          }
+          const einTagFrage = readlineSync.question("Die Auswahl ist gross, verrate mir den Namen deines Wunschgerichtes fuer Heute: ");
           console.log(`Du benötigst dafür folgende Zutaten:`);
-          console.table(zutaten);
+          // Ich bin am verzweifeln an dem Code, ich will einfach nur aus dem Array mit den rezepten einfach nur die 
+          // Zutaten ausgeben lassen die ich auch ausgewählt habe..
+          // Problematisch ist das er immer nur alle Zutaten der Objekte ausgibt..
+
+          // Rest vom code mach ich Sonntag. villeicht bekommst du ja noch was hin.
+          
+          const gesuchteZutaten = einTagFrage;
+
+          for (const rezept of meineRezepte) {
+            if (rezept.titel === gesuchteZutaten) {
+              console.log("Rezept: " + rezept.titel);
+              console.log("Portionen: " + rezept.serves);
+              console.log("Zutaten:");
+          
+              for (const zutat of rezept.zutaten) {
+                console.log(zutat.zutat + ": " + zutat.menge);
+              }
+            }
+          }
+
+         // console.log(einTagFrage);
           
         } else if (tageDieWoche === "2") {
           console.log("Super! Was schmeckt dir am besten?");
@@ -188,5 +185,4 @@ rezeptArray.push(spaMiCha);
      return user
     }
     const user = checkUser();
-
- 
+    // ----------------------------------------------------------------
