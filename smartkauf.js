@@ -159,7 +159,7 @@ zutaten: [
               console.log("Rezept: " + rezept.title);
               console.log("Portionen: " + rezept.serves);
               console.log("Zutaten:");
-          
+              
               for (const zutat of rezept.zutaten) {
                 console.table(zutat.zutat + ": " + zutat.maenge);
               }
