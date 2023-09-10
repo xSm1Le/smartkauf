@@ -96,7 +96,7 @@ zutaten: [
     ]
 },
 {
-    title: "One-Pot-Spaghetti mit Champignons",
+    title: "Spaghetti mit Champignons",
     serves: 2,
     zutaten: [
       { zutat: "Champignons", maenge: 250 },
@@ -151,12 +151,7 @@ zutaten: [
           }
           const einTagFrage = readlineSync.question("Die Auswahl ist gross, verrate mir den Namen deines Wunschgerichtes fuer Heute: ");
           console.log(`Du benötigst dafür folgende Zutaten:`);
-          // Ich bin am verzweifeln an dem Code, ich will einfach nur aus dem Array mit den rezepten einfach nur die 
-          // Zutaten ausgeben lassen die ich auch ausgewählt habe..
-          // Problematisch ist das er immer nur alle Zutaten der Objekte ausgibt..
 
-          // Rest vom code mach ich Sonntag. villeicht bekommst du ja noch was hin.
-          
           const gesuchteZutaten = einTagFrage;
 
           for (const rezept of meineRezepte) {
@@ -166,12 +161,10 @@ zutaten: [
               console.log("Zutaten:");
           
               for (const zutat of rezept.zutaten) {
-                console.log(zutat.zutat + ": " + zutat.maenge);
+                console.table(zutat.zutat + ": " + zutat.maenge);
               }
             }
           }
-
-         // console.log(einTagFrage);
           
         } else if (tageDieWoche === "2") {
           console.log("Super! Was schmeckt dir am besten?");
