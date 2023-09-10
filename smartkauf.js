@@ -160,13 +160,13 @@ zutaten: [
           const gesuchteZutaten = einTagFrage;
 
           for (const rezept of meineRezepte) {
-            if (rezept.titel === gesuchteZutaten) {
-              console.log("Rezept: " + rezept.titel);
+            if (rezept.title === gesuchteZutaten) {
+              console.log("Rezept: " + rezept.title);
               console.log("Portionen: " + rezept.serves);
               console.log("Zutaten:");
           
               for (const zutat of rezept.zutaten) {
-                console.log(zutat.zutat + ": " + zutat.menge);
+                console.log(zutat.zutat + ": " + zutat.maenge);
               }
             }
           }
