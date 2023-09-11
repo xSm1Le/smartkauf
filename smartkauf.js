@@ -129,11 +129,13 @@ const meineRezepte = [
 function getInput(promt) {
     return readline.question(promt);
 }
-
 users;
+const shopingList = [];
 // ----------------------------------------------------------------
 // ----------------------------------------------------------------
 console.log("Smartkauf - Alles was du im Alltag brauchst!");
+
+
 
 function checkUser() {
     const name = readlineSync.question(
@@ -202,20 +204,36 @@ function checkUser() {
                     if (zutatenAbfrage === "Y") {
                         console.log("Dann wuenschen wir Guten Appetit!");
                     } else {
-                        const addIcreadients = readlineSync.question("Was wird noch benoetigt? ");
-                    }
-                
+                        addToShoppingList();
+                        console.log(shopingList);
+                     }
+                     function addToShoppingList(ingredients){
+                         let moreIngredient;
+                         do {
+                            moreIngredient = true;
+                            const response = readlineSync.question("Was wird noch benoetigt? Gib dafuer die Zutat ein oder nutze A fuer Abrrechen wenn du alles hast. ");
+                            if (response === "A"){
+                                moreIngredient = false;
+                            } else {
+                                shopingList.push(response); 
+                            }
+                         } while (moreIngredient)
+                     }
+
+                }
+        
             } else if (tageDieWoche === "2") {
                 console.log("Super! Was schmeckt dir am besten?");
             } else if (tageDieWoche === "3") {
                 console.log("Ein Feinschmecker! Was könnte dir schmecken?");
             }
-        } else {
+             else {
             console.log(
                 "Schade, dann kann ich dir leider nicht weiter helfen!"
             );
         }
     }
+
     return user;
 }
 const user = checkUser();
