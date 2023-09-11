@@ -135,14 +135,11 @@ const shopingList = [];
 // ----------------------------------------------------------------
 console.log("Smartkauf - Alles was du im Alltag brauchst!");
 
-
-
 function checkUser() {
     const name = readlineSync.question(
         "Mit wem hab ich das vergnuegen? verrate mir bitte deinen Namen! "
     );
     console.log("------------------------------------------------------");
-
     const user = users.find((user) => user.name === name);
 
     if (user) {
@@ -153,9 +150,9 @@ function checkUser() {
         );
         console.log("------------------------------------------------------");
         const firstStep = readlineSync.question(
-            `Also ${name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Antwortmoeglichkeiten: Y/N: `
-        );
-        if (firstStep !== "") {
+            `Also ${name}, verrate mir bitte, wie kann ich dir helfen? Willst du anfangen deine Woche zu planen? Antwortmoeglichkeiten: Y/N: `);
+        
+        if (firstStep === "Y" || firstStep === "y") {
             console.log(
                 "------------------------------------------------------"
             );
@@ -165,7 +162,7 @@ function checkUser() {
             console.log(
                 "------------------------------------------------------"
             );
-            if (tageDieWoche === "A") {
+            if (tageDieWoche === "A" || tageDieWoche === "a") {
                 console.log("Schade! Du scheinst doch nicht so smart zu sein!");
             } else if (tageDieWoche === "1") {
                 console.log(
@@ -201,7 +198,7 @@ function checkUser() {
                     "------------------------------------------------------"
                 );
                 const zutatenAbfrage = readlineSync.question("Hast du alle benoetigten Zutaten zur verfuegung? Y/N " );
-                    if (zutatenAbfrage === "Y") {
+                    if (zutatenAbfrage === "Y" || zutatenAbfrage === "y") {
                         console.log("Dann wuenschen wir Guten Appetit!");
                     } else {
                         addToShoppingList();
@@ -212,28 +209,35 @@ function checkUser() {
                          do {
                             moreIngredient = true;
                             const response = readlineSync.question("Was wird noch benoetigt? Gib dafuer die Zutat ein oder nutze A fuer Abrrechen wenn du alles hast. ");
-                            if (response === "A"){
+                            if (response === "A" || response === "a"){
                                 moreIngredient = false;
+                                console.log(
+                                    "------------------------------------------------------");
                             } else {
-                                shopingList.push(response); 
+                                shopingList.push(response);
+                                console.log(
+                                    "------------------------------------------------------");
                             }
                          } while (moreIngredient)
                      }
-
                 }
-        
-            } else if (tageDieWoche === "2") {
-                console.log("Super! Was schmeckt dir am besten?");
+             else if (tageDieWoche === "2") {
+                console.log("Super! Was schmeckt dir von unserer Auswahl am besten?");
+                console.log(
+                    "------------------------------------------------------"
+                );
+            for (const rezept of meineRezepte) {
+                    console.table(rezept.title);
+                }
             } else if (tageDieWoche === "3") {
                 console.log("Ein Feinschmecker! Was könnte dir schmecken?");
             }
              else {
             console.log(
-                "Schade, dann kann ich dir leider nicht weiter helfen!"
-            );
+                "Schade, dann kann ich dir leider nicht weiter helfen!");
         }
     }
-
+}
     return user;
 }
 const user = checkUser();
