@@ -198,6 +198,13 @@ function checkUser() {
                 console.log(
                     "------------------------------------------------------"
                 );
+                const zutatenAbfrage = readlineSync.question("Hast du alle benoetigten Zutaten zur verfuegung? Y/N " );
+                    if (zutatenAbfrage === "Y") {
+                        console.log("Dann wuenschen wir Guten Appetit!");
+                    } else {
+                        const addIcreadients = readlineSync.question("Was wird noch benoetigt? ");
+                    }
+                
             } else if (tageDieWoche === "2") {
                 console.log("Super! Was schmeckt dir am besten?");
             } else if (tageDieWoche === "3") {
