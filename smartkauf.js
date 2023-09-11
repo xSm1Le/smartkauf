@@ -205,7 +205,7 @@ function checkUser() {
                         console.log("Dann wuenschen wir Guten Appetit!");
                     } else {
                         addToShoppingList();
-                        console.log(shopingList);
+                        console.log("Deine Einkaufsliste: ", shopingList);
                      }
                      function addToShoppingList(ingredients){
                          let moreIngredient;
